@@ -163,7 +163,7 @@ const getData = (
   const home = [
     {
       id: LEARNING.SWITCH_PROJECT_LANGUAGE,
-      title: 'Switch the language',
+      title: 'Сменить язык',
       onClick: () =>
         $guide?.current?.play(
           LEARNING.SWITCH_PROJECT_LANGUAGE,
@@ -172,13 +172,13 @@ const getData = (
     },
     {
       id: LEARNING.SHARE_RESULTS,
-      title: 'Export to Excel/Sheets',
+      title: 'Экспорт в Excel/Sheets',
       href: 'https://docs.getwren.ai/oss/guide/integrations/excel-add-in',
       onClick: () => saveRecord(LEARNING.SHARE_RESULTS),
     },
     {
       id: LEARNING.VIEW_FULL_SQL,
-      title: 'View full SQL',
+      title: 'Посмотреть полный SQL-запрос',
       href: 'https://docs.getwren.ai/oss/guide/home/answer#view-sqlview-full-sql',
       onClick: () => saveRecord(LEARNING.VIEW_FULL_SQL),
     },
@@ -317,7 +317,7 @@ export default function SidebarSection(_props: Props) {
         >
           <div className="flex-grow-1">
             <ReadOutlined className="mr-1" />
-            Learning
+            Обучение
           </div>
           <RightOutlined
             className="text-sm"
@@ -329,7 +329,7 @@ export default function SidebarSection(_props: Props) {
           <div className="px-4 py-2 d-flex align-center">
             <Progress total={total} current={current} />
             <span className="text-xs gray-6 text-nowrap pl-2">
-              {current}/{total} Finished
+              {current}/{total} Завершено
             </span>
           </div>
         </CollapseBlock>

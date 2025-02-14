@@ -1,9 +1,15 @@
 import { gql } from '@apollo/client';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type Exact<T extends { [key: string]: unknown }> = {
+  [K in keyof T]: T[K];
+};
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]?: Maybe<T[SubKey]>;
+};
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]: Maybe<T[SubKey]>;
+};
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -45,13 +51,13 @@ export enum AskingTaskStatus {
   PLANNING = 'PLANNING',
   SEARCHING = 'SEARCHING',
   STOPPED = 'STOPPED',
-  UNDERSTANDING = 'UNDERSTANDING'
+  UNDERSTANDING = 'UNDERSTANDING',
 }
 
 export enum AskingTaskType {
   GENERAL = 'GENERAL',
   MISLEADING_QUERY = 'MISLEADING_QUERY',
-  TEXT_TO_SQL = 'TEXT_TO_SQL'
+  TEXT_TO_SQL = 'TEXT_TO_SQL',
 }
 
 export type CalculatedFieldInput = {
@@ -72,7 +78,7 @@ export enum ChartTaskStatus {
   FETCHING = 'FETCHING',
   FINISHED = 'FINISHED',
   GENERATING = 'GENERATING',
-  STOPPED = 'STOPPED'
+  STOPPED = 'STOPPED',
 }
 
 export enum ChartType {
@@ -82,7 +88,7 @@ export enum ChartType {
   LINE = 'LINE',
   MULTI_LINE = 'MULTI_LINE',
   PIE = 'PIE',
-  STACKED_BAR = 'STACKED_BAR'
+  STACKED_BAR = 'STACKED_BAR',
 }
 
 export type CompactColumn = {
@@ -184,7 +190,7 @@ export enum DashboardItemType {
   NUMBER = 'NUMBER',
   PIE = 'PIE',
   STACKED_BAR = 'STACKED_BAR',
-  TABLE = 'TABLE'
+  TABLE = 'TABLE',
 }
 
 export type DashboardItemWhereInput = {
@@ -211,7 +217,7 @@ export enum DataSourceName {
   MYSQL = 'MYSQL',
   POSTGRES = 'POSTGRES',
   SNOWFLAKE = 'SNOWFLAKE',
-  TRINO = 'TRINO'
+  TRINO = 'TRINO',
 }
 
 export type DeleteDashboardItemInput = {
@@ -439,7 +445,7 @@ export enum ExpressionName {
   REVERSE = 'REVERSE',
   ROUND = 'ROUND',
   SIGN = 'SIGN',
-  SUM = 'SUM'
+  SUM = 'SUM',
 }
 
 export type FieldInfo = {
@@ -561,234 +567,189 @@ export type Mutation = {
   validateView: ViewValidationResponse;
 };
 
-
 export type MutationAdjustThreadResponseChartArgs = {
   data: AdjustThreadResponseChartInput;
   responseId: Scalars['Int'];
 };
 
-
 export type MutationCancelAskingTaskArgs = {
   taskId: Scalars['String'];
 };
-
 
 export type MutationCreateAskingTaskArgs = {
   data: AskingTaskInput;
 };
 
-
 export type MutationCreateCalculatedFieldArgs = {
   data: CreateCalculatedFieldInput;
 };
-
 
 export type MutationCreateDashboardItemArgs = {
   data: CreateDashboardItemInput;
 };
 
-
 export type MutationCreateInstantRecommendedQuestionsArgs = {
   data: InstantRecommendedQuestionsInput;
 };
-
 
 export type MutationCreateModelArgs = {
   data: CreateModelInput;
 };
 
-
 export type MutationCreateRelationArgs = {
   data: RelationInput;
 };
 
-
 export type MutationCreateThreadArgs = {
   data: CreateThreadInput;
 };
-
 
 export type MutationCreateThreadResponseArgs = {
   data: CreateThreadResponseInput;
   threadId: Scalars['Int'];
 };
 
-
 export type MutationCreateViewArgs = {
   data: CreateViewInput;
 };
-
 
 export type MutationDeleteCalculatedFieldArgs = {
   where?: InputMaybe<UpdateCalculatedFieldWhere>;
 };
 
-
 export type MutationDeleteDashboardItemArgs = {
   where: DashboardItemWhereInput;
 };
-
 
 export type MutationDeleteModelArgs = {
   where: ModelWhereInput;
 };
 
-
 export type MutationDeleteRelationArgs = {
   where: WhereIdInput;
 };
-
 
 export type MutationDeleteThreadArgs = {
   where: ThreadUniqueWhereInput;
 };
 
-
 export type MutationDeleteViewArgs = {
   where: ViewWhereUniqueInput;
 };
-
 
 export type MutationDeployArgs = {
   force?: InputMaybe<Scalars['Boolean']>;
 };
 
-
 export type MutationGenerateThreadRecommendationQuestionsArgs = {
   threadId: Scalars['Int'];
 };
-
 
 export type MutationGenerateThreadResponseAnswerArgs = {
   responseId: Scalars['Int'];
 };
 
-
 export type MutationGenerateThreadResponseBreakdownArgs = {
   responseId: Scalars['Int'];
 };
-
 
 export type MutationGenerateThreadResponseChartArgs = {
   responseId: Scalars['Int'];
 };
 
-
 export type MutationPreviewBreakdownDataArgs = {
   where: PreviewDataInput;
 };
-
 
 export type MutationPreviewDataArgs = {
   where: PreviewDataInput;
 };
 
-
 export type MutationPreviewItemSqlArgs = {
   data: PreviewItemSqlInput;
 };
-
 
 export type MutationPreviewModelDataArgs = {
   where: WhereIdInput;
 };
 
-
 export type MutationPreviewSqlArgs = {
   data?: InputMaybe<PreviewSqlDataInput>;
 };
-
 
 export type MutationPreviewViewDataArgs = {
   where: PreviewViewDataInput;
 };
 
-
 export type MutationResolveSchemaChangeArgs = {
   where: ResolveSchemaChangeWhereInput;
 };
-
 
 export type MutationSaveDataSourceArgs = {
   data: DataSourceInput;
 };
 
-
 export type MutationSaveLearningRecordArgs = {
   data: SaveLearningRecordInput;
 };
-
 
 export type MutationSaveRelationsArgs = {
   data: SaveRelationInput;
 };
 
-
 export type MutationSaveTablesArgs = {
   data: SaveTablesInput;
 };
 
-
 export type MutationStartSampleDatasetArgs = {
   data: SampleDatasetInput;
 };
-
 
 export type MutationUpdateCalculatedFieldArgs = {
   data: UpdateCalculatedFieldInput;
   where: UpdateCalculatedFieldWhere;
 };
 
-
 export type MutationUpdateCurrentProjectArgs = {
   data: UpdateCurrentProjectInput;
 };
-
 
 export type MutationUpdateDashboardItemLayoutsArgs = {
   data: UpdateDashboardItemLayoutsInput;
 };
 
-
 export type MutationUpdateDataSourceArgs = {
   data: UpdateDataSourceInput;
 };
-
 
 export type MutationUpdateModelArgs = {
   data: UpdateModelInput;
   where: ModelWhereInput;
 };
 
-
 export type MutationUpdateModelMetadataArgs = {
   data: UpdateModelMetadataInput;
   where: ModelWhereInput;
 };
-
 
 export type MutationUpdateRelationArgs = {
   data: UpdateRelationInput;
   where: WhereIdInput;
 };
 
-
 export type MutationUpdateThreadArgs = {
   data: UpdateThreadInput;
   where: ThreadUniqueWhereInput;
 };
-
 
 export type MutationUpdateViewMetadataArgs = {
   data: UpdateViewMetadataInput;
   where: ViewWhereUniqueInput;
 };
 
-
 export type MutationValidateCalculatedFieldArgs = {
   data: ValidateCalculatedFieldInput;
 };
-
 
 export type MutationValidateViewArgs = {
   data: ValidateViewInput;
@@ -811,14 +772,14 @@ export enum NodeType {
   METRIC = 'METRIC',
   MODEL = 'MODEL',
   RELATION = 'RELATION',
-  VIEW = 'VIEW'
+  VIEW = 'VIEW',
 }
 
 export enum OnboardingStatus {
   DATASOURCE_SAVED = 'DATASOURCE_SAVED',
   NOT_STARTED = 'NOT_STARTED',
   ONBOARDING_FINISHED = 'ONBOARDING_FINISHED',
-  WITH_SAMPLE_DATASET = 'WITH_SAMPLE_DATASET'
+  WITH_SAMPLE_DATASET = 'WITH_SAMPLE_DATASET',
 }
 
 export type OnboardingStatusResponse = {
@@ -859,7 +820,7 @@ export enum ProjectLanguage {
   PT = 'PT',
   RU = 'RU',
   ZH_CN = 'ZH_CN',
-  ZH_TW = 'ZH_TW'
+  ZH_TW = 'ZH_TW',
 }
 
 export type Query = {
@@ -889,46 +850,37 @@ export type Query = {
   view: ViewInfo;
 };
 
-
 export type QueryAskingTaskArgs = {
   taskId: Scalars['String'];
 };
-
 
 export type QueryGetMdlArgs = {
   hash: Scalars['String'];
 };
 
-
 export type QueryGetThreadRecommendationQuestionsArgs = {
   threadId: Scalars['Int'];
 };
-
 
 export type QueryInstantRecommendedQuestionsArgs = {
   taskId: Scalars['String'];
 };
 
-
 export type QueryModelArgs = {
   where: ModelWhereInput;
 };
-
 
 export type QueryNativeSqlArgs = {
   responseId: Scalars['Int'];
 };
 
-
 export type QueryThreadArgs = {
   threadId: Scalars['Int'];
 };
 
-
 export type QueryThreadResponseArgs = {
   responseId: Scalars['Int'];
 };
-
 
 export type QueryViewArgs = {
   where: ViewWhereUniqueInput;
@@ -953,7 +905,7 @@ export enum RecommendedQuestionsTaskStatus {
   FAILED = 'FAILED',
   FINISHED = 'FINISHED',
   GENERATING = 'GENERATING',
-  NOT_STARTED = 'NOT_STARTED'
+  NOT_STARTED = 'NOT_STARTED',
 }
 
 export type Relation = {
@@ -981,7 +933,7 @@ export type RelationInput = {
 export enum RelationType {
   MANY_TO_ONE = 'MANY_TO_ONE',
   ONE_TO_MANY = 'ONE_TO_MANY',
-  ONE_TO_ONE = 'ONE_TO_ONE'
+  ONE_TO_ONE = 'ONE_TO_ONE',
 }
 
 export type ResolveSchemaChangeWhereInput = {
@@ -997,7 +949,7 @@ export type ResultCandidate = {
 
 export enum ResultCandidateType {
   LLM = 'LLM',
-  VIEW = 'VIEW'
+  VIEW = 'VIEW',
 }
 
 export type ResultQuestion = {
@@ -1015,7 +967,7 @@ export enum SampleDatasetName {
   ECOMMERCE = 'ECOMMERCE',
   HR = 'HR',
   MUSIC = 'MUSIC',
-  NBA = 'NBA'
+  NBA = 'NBA',
 }
 
 export type SaveLearningRecordInput = {
@@ -1041,7 +993,7 @@ export type SchemaChange = {
 export enum SchemaChangeType {
   DELETED_COLUMNS = 'DELETED_COLUMNS',
   DELETED_TABLES = 'DELETED_TABLES',
-  MODIFIED_COLUMNS = 'MODIFIED_COLUMNS'
+  MODIFIED_COLUMNS = 'MODIFIED_COLUMNS',
 }
 
 export type Settings = {
@@ -1073,7 +1025,7 @@ export type SuggestedQuestionResponse = {
 export enum SyncStatus {
   IN_PROGRESS = 'IN_PROGRESS',
   SYNCRONIZED = 'SYNCRONIZED',
-  UNSYNCRONIZED = 'UNSYNCRONIZED'
+  UNSYNCRONIZED = 'UNSYNCRONIZED',
 }
 
 export type Task = {
@@ -1115,7 +1067,7 @@ export enum ThreadResponseAnswerStatus {
   INTERRUPTED = 'INTERRUPTED',
   NOT_STARTED = 'NOT_STARTED',
   PREPROCESSING = 'PREPROCESSING',
-  STREAMING = 'STREAMING'
+  STREAMING = 'STREAMING',
 }
 
 export type ThreadResponseBreakdownDetail = {

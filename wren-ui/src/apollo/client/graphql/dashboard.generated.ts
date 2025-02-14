@@ -3,65 +3,146 @@ import * as Types from './__types__';
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
-export type CommonDashboardItemFragment = { __typename?: 'DashboardItem', id: number, dashboardId: number, type: Types.DashboardItemType, layout: { __typename?: 'DashboardItemLayout', x: number, y: number, w: number, h: number }, detail: { __typename?: 'DashboardItemDetail', sql: string, chartSchema?: any | null } };
+export type CommonDashboardItemFragment = {
+  __typename?: 'DashboardItem';
+  id: number;
+  dashboardId: number;
+  type: Types.DashboardItemType;
+  layout: {
+    __typename?: 'DashboardItemLayout';
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+  };
+  detail: {
+    __typename?: 'DashboardItemDetail';
+    sql: string;
+    chartSchema?: any | null;
+  };
+};
 
-export type DashboardItemsQueryVariables = Types.Exact<{ [key: string]: never; }>;
+export type DashboardItemsQueryVariables = Types.Exact<{
+  [key: string]: never;
+}>;
 
-
-export type DashboardItemsQuery = { __typename?: 'Query', dashboardItems: Array<{ __typename?: 'DashboardItem', id: number, dashboardId: number, type: Types.DashboardItemType, layout: { __typename?: 'DashboardItemLayout', x: number, y: number, w: number, h: number }, detail: { __typename?: 'DashboardItemDetail', sql: string, chartSchema?: any | null } }> };
+export type DashboardItemsQuery = {
+  __typename?: 'Query';
+  dashboardItems: Array<{
+    __typename?: 'DashboardItem';
+    id: number;
+    dashboardId: number;
+    type: Types.DashboardItemType;
+    layout: {
+      __typename?: 'DashboardItemLayout';
+      x: number;
+      y: number;
+      w: number;
+      h: number;
+    };
+    detail: {
+      __typename?: 'DashboardItemDetail';
+      sql: string;
+      chartSchema?: any | null;
+    };
+  }>;
+};
 
 export type CreateDashboardItemMutationVariables = Types.Exact<{
   data: Types.CreateDashboardItemInput;
 }>;
 
-
-export type CreateDashboardItemMutation = { __typename?: 'Mutation', createDashboardItem: { __typename?: 'DashboardItem', id: number, dashboardId: number, type: Types.DashboardItemType, layout: { __typename?: 'DashboardItemLayout', x: number, y: number, w: number, h: number }, detail: { __typename?: 'DashboardItemDetail', sql: string, chartSchema?: any | null } } };
+export type CreateDashboardItemMutation = {
+  __typename?: 'Mutation';
+  createDashboardItem: {
+    __typename?: 'DashboardItem';
+    id: number;
+    dashboardId: number;
+    type: Types.DashboardItemType;
+    layout: {
+      __typename?: 'DashboardItemLayout';
+      x: number;
+      y: number;
+      w: number;
+      h: number;
+    };
+    detail: {
+      __typename?: 'DashboardItemDetail';
+      sql: string;
+      chartSchema?: any | null;
+    };
+  };
+};
 
 export type UpdateDashboardItemLayoutsMutationVariables = Types.Exact<{
   data: Types.UpdateDashboardItemLayoutsInput;
 }>;
 
-
-export type UpdateDashboardItemLayoutsMutation = { __typename?: 'Mutation', updateDashboardItemLayouts: Array<{ __typename?: 'DashboardItem', id: number, dashboardId: number, type: Types.DashboardItemType, layout: { __typename?: 'DashboardItemLayout', x: number, y: number, w: number, h: number }, detail: { __typename?: 'DashboardItemDetail', sql: string, chartSchema?: any | null } }> };
+export type UpdateDashboardItemLayoutsMutation = {
+  __typename?: 'Mutation';
+  updateDashboardItemLayouts: Array<{
+    __typename?: 'DashboardItem';
+    id: number;
+    dashboardId: number;
+    type: Types.DashboardItemType;
+    layout: {
+      __typename?: 'DashboardItemLayout';
+      x: number;
+      y: number;
+      w: number;
+      h: number;
+    };
+    detail: {
+      __typename?: 'DashboardItemDetail';
+      sql: string;
+      chartSchema?: any | null;
+    };
+  }>;
+};
 
 export type DeleteDashboardItemMutationVariables = Types.Exact<{
   where: Types.DashboardItemWhereInput;
 }>;
 
-
-export type DeleteDashboardItemMutation = { __typename?: 'Mutation', deleteDashboardItem: boolean };
+export type DeleteDashboardItemMutation = {
+  __typename?: 'Mutation';
+  deleteDashboardItem: boolean;
+};
 
 export type PreviewItemSqlMutationVariables = Types.Exact<{
   data: Types.PreviewItemSqlInput;
 }>;
 
-
-export type PreviewItemSqlMutation = { __typename?: 'Mutation', previewItemSQL: any };
+export type PreviewItemSqlMutation = {
+  __typename?: 'Mutation';
+  previewItemSQL: any;
+};
 
 export const CommonDashboardItemFragmentDoc = gql`
-    fragment CommonDashboardItem on DashboardItem {
-  id
-  dashboardId
-  type
-  layout {
-    x
-    y
-    w
-    h
+  fragment CommonDashboardItem on DashboardItem {
+    id
+    dashboardId
+    type
+    layout {
+      x
+      y
+      w
+      h
+    }
+    detail {
+      sql
+      chartSchema
+    }
   }
-  detail {
-    sql
-    chartSchema
-  }
-}
-    `;
+`;
 export const DashboardItemsDocument = gql`
-    query DashboardItems {
-  dashboardItems {
-    ...CommonDashboardItem
+  query DashboardItems {
+    dashboardItems {
+      ...CommonDashboardItem
+    }
   }
-}
-    ${CommonDashboardItemFragmentDoc}`;
+  ${CommonDashboardItemFragmentDoc}
+`;
 
 /**
  * __useDashboardItemsQuery__
@@ -78,25 +159,52 @@ export const DashboardItemsDocument = gql`
  *   },
  * });
  */
-export function useDashboardItemsQuery(baseOptions?: Apollo.QueryHookOptions<DashboardItemsQuery, DashboardItemsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<DashboardItemsQuery, DashboardItemsQueryVariables>(DashboardItemsDocument, options);
-      }
-export function useDashboardItemsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<DashboardItemsQuery, DashboardItemsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<DashboardItemsQuery, DashboardItemsQueryVariables>(DashboardItemsDocument, options);
-        }
-export type DashboardItemsQueryHookResult = ReturnType<typeof useDashboardItemsQuery>;
-export type DashboardItemsLazyQueryHookResult = ReturnType<typeof useDashboardItemsLazyQuery>;
-export type DashboardItemsQueryResult = Apollo.QueryResult<DashboardItemsQuery, DashboardItemsQueryVariables>;
-export const CreateDashboardItemDocument = gql`
-    mutation CreateDashboardItem($data: CreateDashboardItemInput!) {
-  createDashboardItem(data: $data) {
-    ...CommonDashboardItem
-  }
+export function useDashboardItemsQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    DashboardItemsQuery,
+    DashboardItemsQueryVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<DashboardItemsQuery, DashboardItemsQueryVariables>(
+    DashboardItemsDocument,
+    options,
+  );
 }
-    ${CommonDashboardItemFragmentDoc}`;
-export type CreateDashboardItemMutationFn = Apollo.MutationFunction<CreateDashboardItemMutation, CreateDashboardItemMutationVariables>;
+export function useDashboardItemsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    DashboardItemsQuery,
+    DashboardItemsQueryVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<DashboardItemsQuery, DashboardItemsQueryVariables>(
+    DashboardItemsDocument,
+    options,
+  );
+}
+export type DashboardItemsQueryHookResult = ReturnType<
+  typeof useDashboardItemsQuery
+>;
+export type DashboardItemsLazyQueryHookResult = ReturnType<
+  typeof useDashboardItemsLazyQuery
+>;
+export type DashboardItemsQueryResult = Apollo.QueryResult<
+  DashboardItemsQuery,
+  DashboardItemsQueryVariables
+>;
+export const CreateDashboardItemDocument = gql`
+  mutation CreateDashboardItem($data: CreateDashboardItemInput!) {
+    createDashboardItem(data: $data) {
+      ...CommonDashboardItem
+    }
+  }
+  ${CommonDashboardItemFragmentDoc}
+`;
+export type CreateDashboardItemMutationFn = Apollo.MutationFunction<
+  CreateDashboardItemMutation,
+  CreateDashboardItemMutationVariables
+>;
 
 /**
  * __useCreateDashboardItemMutation__
@@ -115,21 +223,39 @@ export type CreateDashboardItemMutationFn = Apollo.MutationFunction<CreateDashbo
  *   },
  * });
  */
-export function useCreateDashboardItemMutation(baseOptions?: Apollo.MutationHookOptions<CreateDashboardItemMutation, CreateDashboardItemMutationVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useMutation<CreateDashboardItemMutation, CreateDashboardItemMutationVariables>(CreateDashboardItemDocument, options);
-      }
-export type CreateDashboardItemMutationHookResult = ReturnType<typeof useCreateDashboardItemMutation>;
-export type CreateDashboardItemMutationResult = Apollo.MutationResult<CreateDashboardItemMutation>;
-export type CreateDashboardItemMutationOptions = Apollo.BaseMutationOptions<CreateDashboardItemMutation, CreateDashboardItemMutationVariables>;
-export const UpdateDashboardItemLayoutsDocument = gql`
-    mutation UpdateDashboardItemLayouts($data: UpdateDashboardItemLayoutsInput!) {
-  updateDashboardItemLayouts(data: $data) {
-    ...CommonDashboardItem
-  }
+export function useCreateDashboardItemMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    CreateDashboardItemMutation,
+    CreateDashboardItemMutationVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<
+    CreateDashboardItemMutation,
+    CreateDashboardItemMutationVariables
+  >(CreateDashboardItemDocument, options);
 }
-    ${CommonDashboardItemFragmentDoc}`;
-export type UpdateDashboardItemLayoutsMutationFn = Apollo.MutationFunction<UpdateDashboardItemLayoutsMutation, UpdateDashboardItemLayoutsMutationVariables>;
+export type CreateDashboardItemMutationHookResult = ReturnType<
+  typeof useCreateDashboardItemMutation
+>;
+export type CreateDashboardItemMutationResult =
+  Apollo.MutationResult<CreateDashboardItemMutation>;
+export type CreateDashboardItemMutationOptions = Apollo.BaseMutationOptions<
+  CreateDashboardItemMutation,
+  CreateDashboardItemMutationVariables
+>;
+export const UpdateDashboardItemLayoutsDocument = gql`
+  mutation UpdateDashboardItemLayouts($data: UpdateDashboardItemLayoutsInput!) {
+    updateDashboardItemLayouts(data: $data) {
+      ...CommonDashboardItem
+    }
+  }
+  ${CommonDashboardItemFragmentDoc}
+`;
+export type UpdateDashboardItemLayoutsMutationFn = Apollo.MutationFunction<
+  UpdateDashboardItemLayoutsMutation,
+  UpdateDashboardItemLayoutsMutationVariables
+>;
 
 /**
  * __useUpdateDashboardItemLayoutsMutation__
@@ -148,19 +274,37 @@ export type UpdateDashboardItemLayoutsMutationFn = Apollo.MutationFunction<Updat
  *   },
  * });
  */
-export function useUpdateDashboardItemLayoutsMutation(baseOptions?: Apollo.MutationHookOptions<UpdateDashboardItemLayoutsMutation, UpdateDashboardItemLayoutsMutationVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useMutation<UpdateDashboardItemLayoutsMutation, UpdateDashboardItemLayoutsMutationVariables>(UpdateDashboardItemLayoutsDocument, options);
-      }
-export type UpdateDashboardItemLayoutsMutationHookResult = ReturnType<typeof useUpdateDashboardItemLayoutsMutation>;
-export type UpdateDashboardItemLayoutsMutationResult = Apollo.MutationResult<UpdateDashboardItemLayoutsMutation>;
-export type UpdateDashboardItemLayoutsMutationOptions = Apollo.BaseMutationOptions<UpdateDashboardItemLayoutsMutation, UpdateDashboardItemLayoutsMutationVariables>;
-export const DeleteDashboardItemDocument = gql`
-    mutation DeleteDashboardItem($where: DashboardItemWhereInput!) {
-  deleteDashboardItem(where: $where)
+export function useUpdateDashboardItemLayoutsMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    UpdateDashboardItemLayoutsMutation,
+    UpdateDashboardItemLayoutsMutationVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<
+    UpdateDashboardItemLayoutsMutation,
+    UpdateDashboardItemLayoutsMutationVariables
+  >(UpdateDashboardItemLayoutsDocument, options);
 }
-    `;
-export type DeleteDashboardItemMutationFn = Apollo.MutationFunction<DeleteDashboardItemMutation, DeleteDashboardItemMutationVariables>;
+export type UpdateDashboardItemLayoutsMutationHookResult = ReturnType<
+  typeof useUpdateDashboardItemLayoutsMutation
+>;
+export type UpdateDashboardItemLayoutsMutationResult =
+  Apollo.MutationResult<UpdateDashboardItemLayoutsMutation>;
+export type UpdateDashboardItemLayoutsMutationOptions =
+  Apollo.BaseMutationOptions<
+    UpdateDashboardItemLayoutsMutation,
+    UpdateDashboardItemLayoutsMutationVariables
+  >;
+export const DeleteDashboardItemDocument = gql`
+  mutation DeleteDashboardItem($where: DashboardItemWhereInput!) {
+    deleteDashboardItem(where: $where)
+  }
+`;
+export type DeleteDashboardItemMutationFn = Apollo.MutationFunction<
+  DeleteDashboardItemMutation,
+  DeleteDashboardItemMutationVariables
+>;
 
 /**
  * __useDeleteDashboardItemMutation__
@@ -179,19 +323,36 @@ export type DeleteDashboardItemMutationFn = Apollo.MutationFunction<DeleteDashbo
  *   },
  * });
  */
-export function useDeleteDashboardItemMutation(baseOptions?: Apollo.MutationHookOptions<DeleteDashboardItemMutation, DeleteDashboardItemMutationVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useMutation<DeleteDashboardItemMutation, DeleteDashboardItemMutationVariables>(DeleteDashboardItemDocument, options);
-      }
-export type DeleteDashboardItemMutationHookResult = ReturnType<typeof useDeleteDashboardItemMutation>;
-export type DeleteDashboardItemMutationResult = Apollo.MutationResult<DeleteDashboardItemMutation>;
-export type DeleteDashboardItemMutationOptions = Apollo.BaseMutationOptions<DeleteDashboardItemMutation, DeleteDashboardItemMutationVariables>;
-export const PreviewItemSqlDocument = gql`
-    mutation PreviewItemSQL($data: PreviewItemSQLInput!) {
-  previewItemSQL(data: $data)
+export function useDeleteDashboardItemMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    DeleteDashboardItemMutation,
+    DeleteDashboardItemMutationVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<
+    DeleteDashboardItemMutation,
+    DeleteDashboardItemMutationVariables
+  >(DeleteDashboardItemDocument, options);
 }
-    `;
-export type PreviewItemSqlMutationFn = Apollo.MutationFunction<PreviewItemSqlMutation, PreviewItemSqlMutationVariables>;
+export type DeleteDashboardItemMutationHookResult = ReturnType<
+  typeof useDeleteDashboardItemMutation
+>;
+export type DeleteDashboardItemMutationResult =
+  Apollo.MutationResult<DeleteDashboardItemMutation>;
+export type DeleteDashboardItemMutationOptions = Apollo.BaseMutationOptions<
+  DeleteDashboardItemMutation,
+  DeleteDashboardItemMutationVariables
+>;
+export const PreviewItemSqlDocument = gql`
+  mutation PreviewItemSQL($data: PreviewItemSQLInput!) {
+    previewItemSQL(data: $data)
+  }
+`;
+export type PreviewItemSqlMutationFn = Apollo.MutationFunction<
+  PreviewItemSqlMutation,
+  PreviewItemSqlMutationVariables
+>;
 
 /**
  * __usePreviewItemSqlMutation__
@@ -210,10 +371,24 @@ export type PreviewItemSqlMutationFn = Apollo.MutationFunction<PreviewItemSqlMut
  *   },
  * });
  */
-export function usePreviewItemSqlMutation(baseOptions?: Apollo.MutationHookOptions<PreviewItemSqlMutation, PreviewItemSqlMutationVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useMutation<PreviewItemSqlMutation, PreviewItemSqlMutationVariables>(PreviewItemSqlDocument, options);
-      }
-export type PreviewItemSqlMutationHookResult = ReturnType<typeof usePreviewItemSqlMutation>;
-export type PreviewItemSqlMutationResult = Apollo.MutationResult<PreviewItemSqlMutation>;
-export type PreviewItemSqlMutationOptions = Apollo.BaseMutationOptions<PreviewItemSqlMutation, PreviewItemSqlMutationVariables>;
+export function usePreviewItemSqlMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    PreviewItemSqlMutation,
+    PreviewItemSqlMutationVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<
+    PreviewItemSqlMutation,
+    PreviewItemSqlMutationVariables
+  >(PreviewItemSqlDocument, options);
+}
+export type PreviewItemSqlMutationHookResult = ReturnType<
+  typeof usePreviewItemSqlMutation
+>;
+export type PreviewItemSqlMutationResult =
+  Apollo.MutationResult<PreviewItemSqlMutation>;
+export type PreviewItemSqlMutationOptions = Apollo.BaseMutationOptions<
+  PreviewItemSqlMutation,
+  PreviewItemSqlMutationVariables
+>;

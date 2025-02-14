@@ -90,7 +90,7 @@ export default function useRecommendedQuestionsInstruction() {
             RecommendedQuestionsTaskStatus.FAILED
         ) {
           message.error(
-            `We couldn't regenerate questions right now. Let's try again later.`,
+            `Нам не удалось сгенерировать вопросы прямо сейчас. Давайте попробуем позже.`,
           );
         }
       } else {
@@ -140,10 +140,10 @@ export default function useRecommendedQuestionsInstruction() {
         <Icon component={CopilotSVG} className="geekblue-6" />
       ),
       children: generating
-        ? 'Generating questions'
+        ? 'Генерирование вопросов'
         : showRetry
-          ? 'Retry'
-          : 'What could I ask?',
+          ? 'Повторить'
+          : 'Что я могу спросить?',
     };
   }, [generating, isRegenerate, showRetry, showRecommendedQuestionsPromptMode]);
 
