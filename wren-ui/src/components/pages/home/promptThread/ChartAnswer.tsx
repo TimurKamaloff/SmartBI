@@ -108,7 +108,7 @@ export default function ChartAnswer(props: Props) {
   const [createDashboardItem] = useCreateDashboardItemMutation({
     onError: (error) => console.error(error),
     onCompleted: () => {
-      message.success('График успешно закреплен на панели управления.');
+      message.success('График успешно закреплен на дашборде.');
     },
   });
 
@@ -193,8 +193,7 @@ export default function ChartAnswer(props: Props) {
 
   const onPin = () => {
     Modal.confirm({
-      title:
-        'Вы уверены, что хотите закрепить этот график на панели управления? ',
+      title: 'Вы уверены, что хотите закрепить этот график на дашборде? ',
       okText: 'Сохранить',
       cancelText: 'Отмена',
       onOk: async () =>

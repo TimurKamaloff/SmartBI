@@ -49,7 +49,7 @@ const EmptyDashboard = (props: {
           Ещё не добавлено ни одного графика
         </div>
         <div className="gray-7">
-          Чтобы добавить графики на панель управления, выполните эти шаги.{' '}
+          Чтобы добавить графики на дашборд, выполните эти шаги.{' '}
           <Link
             className="gray-8 underline"
             href="https://docs.getwren.ai/oss/guide/home/dashboard"
@@ -63,7 +63,7 @@ const EmptyDashboard = (props: {
           <StepIterator
             data={[
               {
-                title: '1.  Создать тему',
+                title: '1.  Создать чат',
                 image: '/images/dashboard/s1.jpg',
               },
               {
@@ -71,7 +71,7 @@ const EmptyDashboard = (props: {
                 image: '/images/dashboard/s2.jpg',
               },
               {
-                title: '3. Закрепить на панели управление',
+                title: '3. Закрепить на дашборде',
                 image: '/images/dashboard/s3.jpg',
               },
             ]}

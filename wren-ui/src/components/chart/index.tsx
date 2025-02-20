@@ -156,7 +156,7 @@ export default function Chart(props: VegaLiteProps) {
             </Tooltip>
           )}
           {!!onPin && (
-            <Tooltip title="Закрепить график на панели управления">
+            <Tooltip title="Закрепить график на дашборде">
               <button onClick={onPin}>
                 <PushPinOutlined />
               </button>

@@ -58,7 +58,7 @@ export default function ThreadTree(props: Props) {
   } = props;
 
   const getThreadGroupNode = createTreeGroupNode({
-    groupName: 'Темы',
+    groupName: 'Чаты',
     groupKey: 'threads',
     actions: [
       {
