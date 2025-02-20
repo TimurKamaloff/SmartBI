@@ -149,10 +149,10 @@ const NoResult = makeProcessingError({
     'Результаты не найдены. Попробуйте предоставить больше деталей в своем вопросе.',
 });
 
-const Understanding = makeProcessing('Распознавание вопроса');
+const Understanding = makeProcessing('Понимание запроса');
 const Searching = makeProcessing('Поиск данных');
-const Planning = makeProcessing('Систематизация');
-const Generating = makeProcessing('Генерирование ответа');
+const Planning = makeProcessing('Организация процесса');
+const Generating = makeProcessing('Генерация ответа');
 const Finished = (props: Props) => {
   const { data, onSelectResult } = props;
   // only one candidate
