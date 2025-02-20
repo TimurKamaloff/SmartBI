@@ -52,7 +52,7 @@ export const ModelDropdown = makeDropdown((props: Props) => {
       label: (
         <>
           <EditOutlined className="gray-8 mr-2" />
-          Update Columns
+          Обновить столбцы
         </>
       ),
       key: MORE_ACTION.UPDATE_COLUMNS,

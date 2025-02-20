@@ -53,10 +53,6 @@ const PromptStyle = styled.div`
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 `;
 
-const PromptButton = styled(Button)`
-  min-width: 72px;
-`;
-
 const convertAskingTaskToProcessState = (data: AskingTask) => {
   const processState = {
     [AskingTaskStatus.UNDERSTANDING]: PROCESS_STATE.UNDERSTANDING,
@@ -213,7 +209,7 @@ export default forwardRef<Attributes, Props>(function Prompt(props, ref) {
         onPressEnter={inputEnter}
         disabled={isProcessing}
       />
-      <PromptButton
+      <Button
         type="primary"
         size="large"
         className="ml-3"
@@ -221,7 +217,7 @@ export default forwardRef<Attributes, Props>(function Prompt(props, ref) {
         disabled={isProcessing}
       >
         Запросить
-      </PromptButton>
+      </Button>
 
       <PromptResult
         data={result}

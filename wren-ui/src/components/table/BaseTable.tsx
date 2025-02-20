@@ -8,21 +8,21 @@ import { makeIterable } from '@/utils/iteration';
 
 export const COLUMN = {
   ALIAS: {
-    title: 'Alias',
+    title: 'Псевдоним',
     dataIndex: 'displayName',
     key: 'alias',
     ellipsis: true,
     render: (name) => name || '-',
   },
   NAME: {
-    title: 'Name',
+    title: 'Имя',
     dataIndex: 'referenceName',
     key: 'referenceName',
     ellipsis: true,
     render: (name) => name || '-',
   },
   TYPE: {
-    title: 'Type',
+    title: 'Тип',
     dataIndex: 'type',
     render: (type) => {
       return (
@@ -34,7 +34,7 @@ export const COLUMN = {
     },
   },
   EXPRESSION: {
-    title: 'Expression',
+    title: 'Выражение',
     dataIndex: 'expression',
     key: 'expression',
     render: (expression) => {
@@ -46,27 +46,27 @@ export const COLUMN = {
     },
   },
   RELATION_FROM: {
-    title: 'From',
+    title: 'От',
     key: 'fromField',
     ellipsis: true,
     render: (relation) =>
       `${relation.fromModelDisplayName}.${relation.fromColumnDisplayName}`,
   },
   RELATION_TO: {
-    title: 'To',
+    title: 'К',
     key: 'toField',
     ellipsis: true,
     render: (relation) =>
       `${relation.toModelDisplayName}.${relation.toColumnDisplayName}`,
   },
   RELATION: {
-    title: 'Type',
+    title: 'Тип',
     dataIndex: 'type',
     key: 'joinType',
     render: (joinType) => getJoinTypeText(joinType),
   },
   DESCRIPTION: {
-    title: 'Description',
+    title: 'Описание',
     dataIndex: 'description',
     key: 'description',
     ellipsis: true,

@@ -105,7 +105,7 @@ export const createTreeGroupNode =
 
     const emptyChildren = [
       {
-        title: `No ${lowerCase(groupName)}`,
+        title: `Нет ${lowerCase(groupName)}`,
         key: `${groupKey}-empty`,
         selectable: false,
         className: 'adm-treeNode adm-treeNode--empty adm-treeNode--selectNode',

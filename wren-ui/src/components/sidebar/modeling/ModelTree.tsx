@@ -93,7 +93,7 @@ export default function ModelTree(props: Props) {
   };
 
   const getModelGroupNode = createTreeGroupNode({
-    groupName: 'Models',
+    groupName: 'Модели',
     groupKey: 'models',
     actions: [
       {

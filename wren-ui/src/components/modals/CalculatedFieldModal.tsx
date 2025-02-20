@@ -155,7 +155,7 @@ export default function AddCalculatedFieldModal(props: Props) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              How to set primary key in a model.
+              Как установить первичный ключ в модели.
             </Typography.Link>
           </div>
           <div>
@@ -169,7 +169,7 @@ export default function AddCalculatedFieldModal(props: Props) {
     >
       <Form form={form} preserve={false} layout="vertical">
         <Form.Item
-          label="Name"
+          label="Имя"
           name="name"
           required
           rules={[
@@ -184,7 +184,7 @@ export default function AddCalculatedFieldModal(props: Props) {
         </Form.Item>
 
         <Form.Item
-          label="Select an expression"
+          label="Выберите выражение"
           name="expression"
           required
           rules={[
@@ -195,7 +195,7 @@ export default function AddCalculatedFieldModal(props: Props) {
           ]}
         >
           <DescriptiveSelector
-            placeholder="Select an expression"
+            placeholder="Выберите выражение"
             options={expressionOptions}
             descriptiveContentRender={(content) => {
               return (

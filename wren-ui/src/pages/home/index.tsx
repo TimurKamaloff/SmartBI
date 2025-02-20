@@ -74,14 +74,14 @@ function RecommendedQuestionsInstruction(props) {
       <Button className="mt-6" {...buttonProps} />
       {generating && (
         <Text className="mt-3 text-sm gray-6">
-          Thinking of good questions for you... (about 1 minute)
+          Подбираем хорошие вопросы для вас… (около 1 минуты)
         </Text>
       )}
       {!generating && showRetry && (
         <Text className="mt-3 text-sm gray-6 text-center">
-          We couldn't think of questions right now.
+          Нам не удалось придумать вопросы прямо сейчас.
           <br />
-          Let's try again later.
+          Давайте попробуем позже.
         </Text>
       )}
     </Wrapper>

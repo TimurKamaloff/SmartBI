@@ -140,7 +140,7 @@ export default function ModelForm(props: Props) {
         {!isUpdateMode && (
           <div>
             <Form.Item
-              label="Select a table"
+              label="Выберите таблицу"
               name={FormFieldKey.SOURCE_TABLE}
               required
               rules={[
@@ -152,7 +152,7 @@ export default function ModelForm(props: Props) {
             >
               <Select
                 getPopupContainer={(trigger) => trigger.parentElement!}
-                placeholder="Select a table"
+                placeholder="Выберите таблицу"
                 showSearch
                 loading={dataSourceTablesLoading}
                 disabled={isUpdateMode}
@@ -164,7 +164,7 @@ export default function ModelForm(props: Props) {
         )}
         <Loading spinning={isUpdateMode ? dataSourceTablesLoading : false}>
           <Form.Item
-            label="Select columns"
+            label="Выберите столбцы"
             name={FormFieldKey.COLUMNS}
             rules={[
               {
@@ -184,13 +184,13 @@ export default function ModelForm(props: Props) {
               }
               leftColumns={defaultColumns}
               rightColumns={defaultColumns}
-              titles={['Available Columns', 'Target Columns']}
+              titles={['Доступные столбцы', 'Целевые столбцы']}
               showSearch
             />
           </Form.Item>
         </Loading>
         <Form.Item
-          label="Select primary key"
+          label="Выберите первичный ключ"
           name={FormFieldKey.PRIMARY_KEY}
           rules={[
             {
@@ -200,7 +200,7 @@ export default function ModelForm(props: Props) {
         >
           <Select
             getPopupContainer={(trigger) => trigger.parentElement!}
-            placeholder="Select a column"
+            placeholder="Выберите столбец"
             showSearch
             allowClear
           >

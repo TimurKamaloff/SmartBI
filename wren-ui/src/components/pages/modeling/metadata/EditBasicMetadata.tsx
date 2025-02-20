@@ -42,7 +42,7 @@ export default function EditBasicMetadata(props: Props) {
           <Col span={12}>
             <div className="mb-6" data-testid="edit-metadata__name">
               <Typography.Text className="d-block gray-7 mb-2">
-                Name
+                Имя
               </Typography.Text>
               <div>{data.referenceName}</div>
             </div>
@@ -50,7 +50,7 @@ export default function EditBasicMetadata(props: Props) {
           <Col span={12} data-testid="edit-metadata__alias">
             <div className="mb-6" data-testid="metadata__name">
               <Typography.Text className="d-block gray-7 mb-2">
-                Alias
+                Псевдоним
               </Typography.Text>
               <EditableWrapper
                 record={data}
@@ -66,9 +66,7 @@ export default function EditBasicMetadata(props: Props) {
 
       {isView && (
         <div className="mb-6" data-testid="edit-metadata__name">
-          <Typography.Text className="d-block gray-7 mb-2">
-            Name
-          </Typography.Text>
+          <Typography.Text className="d-block gray-7 mb-2">Имя</Typography.Text>
           <EditableWrapper
             record={data}
             dataIndex="displayName"
@@ -82,7 +80,7 @@ export default function EditBasicMetadata(props: Props) {
 
       <div className="mb-6" data-testid="edit-metadata__description">
         <Typography.Text className="d-block gray-7 mb-2">
-          Description
+          Описание
         </Typography.Text>
         <EditableWrapper
           record={data}

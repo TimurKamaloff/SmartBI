@@ -130,11 +130,14 @@ const playDataModelingGuide = (
             <div className="mb-1">
               <ModelIcon style={{ fontSize: 24 }} />
             </div>
-            Create a model
+            Создайте модель
           </>,
         ),
         description: renderToString(
-          <>Click the add icon to start create your first model.</>,
+          <>
+            Нажмите на иконку добавления, чтобы начать создание своей первой
+            модели.
+          </>,
         ),
       },
     },
@@ -150,11 +153,14 @@ const playDataModelingGuide = (
                 alt="edit-model"
               />
             </div>
-            Edit a model
+            Редактировать модель.
           </>,
         ),
         description: renderToString(
-          <>Click the more icon to update the columns of model or delete it.</>,
+          <>
+            Нажмите на иконку “ещё”, чтобы обновить столбцы модели или удалить
+            её.
+          </>,
         ),
       },
     },
@@ -170,13 +176,13 @@ const playDataModelingGuide = (
                 alt="edit-metadata"
               />
             </div>
-            Edit metadata
+            Редактировать метаданные
           </>,
         ),
         description: renderToString(
           <>
-            You could edit alias (alternative name) and descriptions of models
-            and columns.
+            Вы можете редактировать псевдонимы (альтернативные имена) и описания
+            моделей и столбцов.
           </>,
         ),
         onPopoverRender: (popoverDom: DriverPopoverDOM) => {
@@ -196,11 +202,11 @@ const playDataModelingGuide = (
                 alt="deploy-modeling"
               />
             </div>
-            Deploy modeling
+            Развертывание моделирования
           </>,
         ),
         description: renderToString(
-          <>After editing the models, remember to deploy the changes.</>,
+          <>После редактирования моделей не забудьте развернуть изменения.</>,
         ),
       },
     },
@@ -215,7 +221,7 @@ const playDataModelingGuide = (
                 alt="ask-question"
               />
             </div>
-            Ask questions
+            Задавайте вопросы
           </>,
         ),
         description: renderToString(
@@ -311,7 +317,7 @@ const playSwitchProjectLanguageGuide = (
           }
         },
         showButtons: ['next', 'close'],
-        nextBtnText: 'Submit',
+        nextBtnText: 'Дальше',
         onCloseClick: () => {
           $driver.destroy();
           window.sessionStorage.setItem('skipSwitchProjectLanguageGuide', '1');

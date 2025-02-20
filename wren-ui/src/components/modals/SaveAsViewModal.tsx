@@ -65,7 +65,7 @@ export default function SaveAsViewModal(props: Props) {
     >
       <Form form={form} preserve={false} layout="vertical">
         <Form.Item
-          label="Name"
+          label="Имя"
           name="name"
           required
           rules={[

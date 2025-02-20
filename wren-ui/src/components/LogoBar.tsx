@@ -3,9 +3,9 @@ import Image from 'next/image';
 export default function LogoBar() {
   return (
     <Image
-      src="/images/logo-white-with-text.svg"
+      src="/images/logo_SmartBi.svg"
       alt="SmartBI"
-      width={125}
+      width={100}
       height={30}
     />
   );

@@ -87,7 +87,7 @@ const nestedColumns = [
     },
   },
   {
-    title: 'Name',
+    title: 'Имя',
     dataIndex: 'displayName',
   },
 ];

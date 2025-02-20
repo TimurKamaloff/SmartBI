@@ -27,15 +27,16 @@ export default function ViewTree(props: Props) {
       title: 'Как создать представление?',
       content: (
         <div>
-          Pose your questions at{' '}
+          Задавайте свои вопросы на{' '}
           <Link
             href={Path.Home}
             data-ph-capture="true"
             data-ph-capture-attribute-name="cta_add_view_navigate_to_home"
           >
-            homepage
+            главной странице
           </Link>
-          , and get some helpful answers to save as views.
+          и получайте полезные ответы, которые можно сохранить в качестве
+          представлений.
         </div>
       ),
       okButtonProps: {

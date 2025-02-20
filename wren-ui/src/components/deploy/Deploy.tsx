@@ -17,19 +17,19 @@ const getDeployStatus = (deploying: boolean, status: SyncStatus) => {
       [SyncStatus.IN_PROGRESS]: (
         <Space size={[4, 0]}>
           <LoadingOutlined className="mr-1 gray-1" />
-          <Text className="gray-1">Deploying...</Text>
+          <Text className="gray-1">Развертывание...</Text>
         </Space>
       ),
       [SyncStatus.SYNCRONIZED]: (
         <Space size={[4, 0]}>
           <CheckCircleOutlined className="mr-1 green-7" />
-          <Text className="gray-1">Synced</Text>
+          <Text className="gray-1">Синхронизировано</Text>
         </Space>
       ),
       [SyncStatus.UNSYNCRONIZED]: (
         <Space size={[4, 0]}>
           <WarningOutlined className="mr-1 gold-6" />
-          <Text className="gray-1">Undeployed changes</Text>
+          <Text className="gray-1">Неразвернутые изменения</Text>
         </Space>
       ),
     }[syncStatus] || ''
@@ -82,13 +82,14 @@ export default function Deploy() {
     <Space size={[8, 0]}>
       {getDeployStatus(deploying, syncStatus)}
       <Button
+        size="small"
         className={`adm-modeling-header-btn ${disabled ? '' : 'gray-10'}`}
         disabled={disabled}
         onClick={() => onDeploy()}
-        size="small"
         data-guideid="deploy-model"
+        style={{ width: 'auto' }}
       >
-        Deploy
+        Развернуть
       </Button>
     </Space>
   );
