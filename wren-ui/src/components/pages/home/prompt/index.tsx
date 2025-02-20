@@ -207,7 +207,7 @@ export default forwardRef<Attributes, Props>(function Prompt(props, ref) {
         data-gramm="false"
         size="large"
         autoSize
-        placeholder="Ask to explore your data"
+        placeholder="Запросите анализ ваших данных"
         value={inputValue}
         onInput={syncInputValue}
         onPressEnter={inputEnter}
@@ -220,7 +220,7 @@ export default forwardRef<Attributes, Props>(function Prompt(props, ref) {
         onClick={submitAsk}
         disabled={isProcessing}
       >
-        Ask
+        Запросить
       </PromptButton>
 
       <PromptResult

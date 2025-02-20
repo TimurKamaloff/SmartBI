@@ -69,7 +69,7 @@ export default function ThreadTree(props: Props) {
             icon={<PlusOutlined />}
             onClick={() => router.push(Path.Home)}
           >
-            New
+            Добавить
           </GroupActionButton>
         ),
       },

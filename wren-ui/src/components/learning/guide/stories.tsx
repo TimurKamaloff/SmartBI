@@ -220,14 +220,14 @@ const playDataModelingGuide = (
         ),
         description: renderToString(
           <>
-            When you finish editing your models, you can visit “Home” and start
-            asking questions.
+            Когда закончите редактирование своих моделей, вы можете перейти на
+            вкладку “Главная” и начать задавать вопросы.
           </>,
         ),
         onPopoverRender: (popoverDom: DriverPopoverDOM) => {
           resetPopoverStyle(popoverDom, 720);
         },
-        doneBtnText: 'Go to Home',
+        doneBtnText: 'Вернуться на главную',
         onNextClick: () => {
           router.push(Path.Home);
           $driver.destroy();
@@ -252,7 +252,7 @@ const LanguageSwitcher = (props: { defaultValue: ProjectLanguage }) => {
 
   return (
     <>
-      <label className="d-block mb-2">Project language</label>
+      <label className="d-block mb-2">Язык</label>
       <Select
         showSearch
         style={{ width: '100%' }}
@@ -287,17 +287,17 @@ const playSwitchProjectLanguageGuide = (
             <div className="mb-1">
               <TranslateIcon style={{ fontSize: 24 }} />
             </div>
-            Switch the language
+            Сменить язык
           </>,
         ),
         description: renderToString(
           <>
-            Choose your preferred language. Once set up, AI will respond in your
-            chosen language.
+            Выберите предпочитаемый язык. После настройки, ИИ будет отвечать на
+            выбранном вами языке.
             <div className="my-3">
               <div id="projectLanguageContainer" />
             </div>
-            You can go to project settings to change it if you change your mind.
+            Вы можете изменить его в настройках проекта, если передумаете.
           </>,
         ),
         onPopoverRender: (popoverDom: DriverPopoverDOM) => {

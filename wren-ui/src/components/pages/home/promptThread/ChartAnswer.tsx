@@ -108,7 +108,7 @@ export default function ChartAnswer(props: Props) {
   const [createDashboardItem] = useCreateDashboardItemMutation({
     onError: (error) => console.error(error),
     onCompleted: () => {
-      message.success('Successfully pinned chart to dashboard.');
+      message.success('График успешно закреплен на панели управления.');
     },
   });
 
@@ -181,8 +181,9 @@ export default function ChartAnswer(props: Props) {
 
   const onReload = () => {
     Modal.confirm({
-      title: 'Are you sure you want to regenerate the chart?',
+      title: 'Вы уверены, что хотите создать график заново? ',
       onOk: onRegenerate,
+      cancelText: 'Отмена',
     });
   };
 
@@ -192,8 +193,10 @@ export default function ChartAnswer(props: Props) {
 
   const onPin = () => {
     Modal.confirm({
-      title: 'Are you sure you want to pin this chart to the dashboard?',
-      okText: 'Save',
+      title:
+        'Вы уверены, что хотите закрепить этот график на панели управления? ',
+      okText: 'Сохранить',
+      cancelText: 'Отмена',
       onOk: async () =>
         await createDashboardItem({
           variables: {
@@ -278,14 +281,14 @@ export default function ChartAnswer(props: Props) {
                   {isAdjusted && (
                     <div className="d-flex flex-column">
                       <Button className="ml-4 mb-2" onClick={onResetAdjustment}>
-                        Reset
+                        Сбросить
                       </Button>
                       <Button
                         className="ml-4"
                         type="primary"
                         onClick={onAdjustChart}
                       >
-                        Adjust
+                        Настроить
                       </Button>
                     </div>
                   )}

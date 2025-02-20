@@ -102,16 +102,17 @@ export default function Chart(props: VegaLiteProps) {
   };
 
   if (vegaSpec === null) {
-    if (values.length === 0) return <div>No available data</div>;
+    if (values.length === 0) return <div>Нет данных</div>;
     return (
       <Alert
         className="mt-6 mb-4 mx-4"
         message={
           <div className="d-flex align-center justify-space-between">
             <div>
-              There are too many categories to display effectively. Click 'Show
-              top 25' to view the top results, or ask a follow-up question to
-              focus on a specific group or filter results.
+              Слишком много категорий для эффективного отображения. Нажмите
+              "Показать топ 25", чтобы увидеть лучшие результаты, или задайте
+              уточняющий вопрос, чтобы сосредоточиться на конкретной группе или
+              отфильтровать результаты.
             </div>
             <Button
               size="small"
@@ -141,21 +142,21 @@ export default function Chart(props: VegaLiteProps) {
       {isAdditionalShow && (
         <div className="adm-chart-additional d-flex justify-content-between align-center">
           {!!onReload && (
-            <Tooltip title="Regenerate chart">
+            <Tooltip title="Перегенерировать график">
               <button onClick={onReload}>
                 <ReloadOutlined />
               </button>
             </Tooltip>
           )}
           {!!onEdit && (
-            <Tooltip title="Edit chart">
+            <Tooltip title="Редактировать график">
               <button onClick={onEdit}>
                 <EditOutlined />
               </button>
             </Tooltip>
           )}
           {!!onPin && (
-            <Tooltip title="Pin chart to dashboard">
+            <Tooltip title="Закрепить график на панели управления">
               <button onClick={onPin}>
                 <PushPinOutlined />
               </button>

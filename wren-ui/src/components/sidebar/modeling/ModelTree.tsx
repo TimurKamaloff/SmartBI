@@ -104,7 +104,7 @@ export default function ModelTree(props: Props) {
             spin={isDetecting}
             title={
               schemaChangeData?.schemaChange.lastSchemaChangeTime
-                ? `Last refresh ${getRelativeTime(schemaChangeData?.schemaChange.lastSchemaChangeTime)}`
+                ? `Последнее обновление ${getRelativeTime(schemaChangeData?.schemaChange.lastSchemaChangeTime)}`
                 : ''
             }
             onClick={() => triggerDataSourceDetection()}
@@ -121,7 +121,7 @@ export default function ModelTree(props: Props) {
             size="small"
             onClick={() => onOpenModelDrawer()}
           >
-            New
+            Добавить
           </GroupActionButton>
         ),
       },

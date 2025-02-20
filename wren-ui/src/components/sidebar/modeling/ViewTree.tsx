@@ -24,7 +24,7 @@ export default function ViewTree(props: Props) {
 
   const onAddView = () => {
     Modal.info({
-      title: 'How to create a View?',
+      title: 'Как создать представление?',
       content: (
         <div>
           Pose your questions at{' '}
@@ -46,7 +46,7 @@ export default function ViewTree(props: Props) {
   };
 
   const getViewGroupNode = createTreeGroupNode({
-    groupName: 'Views',
+    groupName: 'Представления',
     groupKey: 'views',
     actions: [
       {
@@ -59,7 +59,7 @@ export default function ViewTree(props: Props) {
             data-ph-capture="true"
             data-ph-capture-attribute-name="cta_add_view"
           >
-            New
+            Добавить
           </GroupActionButton>
         ),
       },

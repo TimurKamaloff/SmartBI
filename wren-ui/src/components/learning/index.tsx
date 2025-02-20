@@ -127,7 +127,7 @@ const getData = (
   const modeling = [
     {
       id: LEARNING.DATA_MODELING_GUIDE,
-      title: 'Data modeling guide',
+      title: 'Руководство по моделированию данных',
       onClick: () =>
         $guide?.current?.play(
           LEARNING.DATA_MODELING_GUIDE,
@@ -136,25 +136,25 @@ const getData = (
     },
     {
       id: LEARNING.CREATING_MODEL,
-      title: 'Creating a model',
+      title: 'Построение модели',
       href: 'https://docs.getwren.ai/oss/guide/modeling/models',
       onClick: () => saveRecord(LEARNING.CREATING_MODEL),
     },
     {
       id: LEARNING.CREATING_VIEW,
-      title: 'Creating a view',
+      title: 'Создание представления',
       href: 'https://docs.getwren.ai/oss/guide/modeling/views',
       onClick: () => saveRecord(LEARNING.CREATING_VIEW),
     },
     {
       id: LEARNING.WORKING_RELATIONSHIP,
-      title: 'Working on relationship',
+      title: 'Моделирование взаимосвязей',
       href: 'https://docs.getwren.ai/oss/guide/modeling/relationships',
       onClick: () => saveRecord(LEARNING.WORKING_RELATIONSHIP),
     },
     {
       id: LEARNING.CONNECT_OTHER_DATA_SOURCES,
-      title: 'Connect to other data sources',
+      title: 'Подключиться к другим источникам данных',
       href: 'https://docs.getwren.ai/oss/guide/connect/overview',
       onClick: () => saveRecord(LEARNING.CONNECT_OTHER_DATA_SOURCES),
     },

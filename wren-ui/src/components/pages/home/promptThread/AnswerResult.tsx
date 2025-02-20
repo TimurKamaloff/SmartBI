@@ -189,7 +189,7 @@ export default function AnswerResult(props: Props) {
             tab={
               <>
                 <CheckCircleFilled className="mr-2" />
-                <Text>Answer</Text>
+                <Text>Ответ</Text>
               </>
             }
           >
@@ -206,7 +206,7 @@ export default function AnswerResult(props: Props) {
           tab={
             <>
               <CodeFilled className="mr-2" />
-              <Text>View SQL</Text>
+              <Text>SQL</Text>
             </>
           }
         >
@@ -223,7 +223,7 @@ export default function AnswerResult(props: Props) {
             <>
               <PieChartFilled className="mr-2" />
               <Text>
-                Chart<Tag className="adm-beta-tag">Beta</Tag>
+                График<Tag className="adm-beta-tag">Beta</Tag>
               </Text>
             </>
           }
