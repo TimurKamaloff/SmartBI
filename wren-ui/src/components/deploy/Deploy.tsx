@@ -17,7 +17,7 @@ const getDeployStatus = (deploying: boolean, status: SyncStatus) => {
       [SyncStatus.IN_PROGRESS]: (
         <Space size={[4, 0]}>
           <LoadingOutlined className="mr-1 gray-1" />
-          <Text className="gray-1">Развертывание...</Text>
+          <Text className="gray-1">Сохранение...</Text>
         </Space>
       ),
       [SyncStatus.SYNCRONIZED]: (
@@ -29,7 +29,7 @@ const getDeployStatus = (deploying: boolean, status: SyncStatus) => {
       [SyncStatus.UNSYNCRONIZED]: (
         <Space size={[4, 0]}>
           <WarningOutlined className="mr-1 gold-6" />
-          <Text className="gray-1">Неразвернутые изменения</Text>
+          <Text className="gray-1">Изменения не сохранены</Text>
         </Space>
       ),
     }[syncStatus] || ''
@@ -89,7 +89,7 @@ export default function Deploy() {
         data-guideid="deploy-model"
         style={{ width: 'auto' }}
       >
-        Развернуть
+        Сохранить
       </Button>
     </Space>
   );

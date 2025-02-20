@@ -144,14 +144,15 @@ const Failed = makeProcessingError({
 
 const NoResult = makeProcessingError({
   icon: <WarningOutlined className="mr-2 text-lg gold-6" />,
-  title: 'Please try again',
-  description: 'No results found. Try providing more details in your question.',
+  title: 'Пожалуйста, попробуйте снова',
+  description:
+    'Результаты не найдены. Попробуйте предоставить больше деталей в своем вопросе.',
 });
 
-const Understanding = makeProcessing('Understanding question');
-const Searching = makeProcessing('Searching data');
-const Planning = makeProcessing('Organizing thoughts');
-const Generating = makeProcessing('Generating answer');
+const Understanding = makeProcessing('Распознавание вопроса');
+const Searching = makeProcessing('Поиск данных');
+const Planning = makeProcessing('Систематизация');
+const Generating = makeProcessing('Генерирование ответа');
 const Finished = (props: Props) => {
   const { data, onSelectResult } = props;
   // only one candidate
