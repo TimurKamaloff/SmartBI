@@ -33,7 +33,7 @@ export default function SaveAsViewModal(props: Props) {
 
   return (
     <Modal
-      title="Save as View"
+      title="Сохранить как представление данных"
       centered
       closable
       destroyOnClose
@@ -50,14 +50,14 @@ export default function SaveAsViewModal(props: Props) {
           >
             <InfoCircleOutlined className="mr-2 text-sm gray-6" />
             <Text type="secondary" className="text-sm gray-6 text-left">
-              After saving, make sure you go to "Modeling Page" to deploy all
-              saved views.
+              После сохранения убедитесь, что вы перешли на страницу
+              "Моделирование", чтобы сохранить все представления.
             </Text>
           </div>
           <div>
-            <Button onClick={onClose}>Cancel</Button>
+            <Button onClick={onClose}>Отмена</Button>
             <Button type="primary" onClick={submit} loading={loading}>
-              Save
+              Сохранить
             </Button>
           </div>
         </div>

@@ -119,7 +119,7 @@ export default function Chart(props: VegaLiteProps) {
               icon={<EyeOutlined />}
               onClick={onShowTopCategories}
             >
-              Show top 25
+              Показать топ 25
             </Button>
           </div>
         }

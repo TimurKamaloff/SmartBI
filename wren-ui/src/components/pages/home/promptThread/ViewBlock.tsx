@@ -38,7 +38,7 @@ export default function ViewBlock({ view, onClick }: Props) {
       icon={<SaveOutlined />}
       onClick={onClick}
     >
-      Save as View
+      Сохранить как представление данных
     </Button>
   );
 }

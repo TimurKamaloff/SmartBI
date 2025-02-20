@@ -18,11 +18,11 @@ export default function LineProperties(props: PropertiesProps) {
           <ChartTypeProperty options={chartTypeOptions} />
         </Col>
         <Col span={12}>
-          <Form.Item className="mb-0" label="Line groups" name="color">
+          <Form.Item className="mb-0" label="Группы строк" name="color">
             <Select
               size="small"
               options={columnOptions}
-              placeholder="Select line groups"
+              placeholder="Выберите группы строк"
             />
           </Form.Item>
         </Col>

@@ -173,14 +173,14 @@ export default function TextBasedAnswer(
               data-ph-capture="true"
               data-ph-capture-attribute-name="cta_text-answer_preview_data"
             >
-              View results
+              Посмотреть результаты
             </Button>
 
             {previewDataResult?.data?.previewData && (
               <div className="mt-2 mb-3">
                 <Text type="secondary" className="text-sm">
-                  Considering the limit of the context window, we retrieve up to
-                  500 rows of results to generate the answer.
+                  Учитывая ограниченный объем контекстного окна, извлекается до
+                  500 строк результатов для генерации ответа.
                 </Text>
                 <PreviewData
                   error={previewDataResult.error}
@@ -196,8 +196,8 @@ export default function TextBasedAnswer(
               <Alert
                 message={
                   <>
-                    Click <b>View SQL</b> to review the step-by-step query logic
-                    and verify why the data is unavailable.
+                    Нажмите <b>Посмотреть SQL</b>, чтобы изучить пошаговую
+                    логику запроса и убедиться, почему данные недоступны.
                   </>
                 }
                 type="info"
