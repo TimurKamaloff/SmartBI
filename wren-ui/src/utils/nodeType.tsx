@@ -9,13 +9,13 @@ export const getNodeTypeIcon = (
   const { nodeType, type } = payload;
   switch (nodeType) {
     case NODE_TYPE.MODEL:
-      return <ModelIcon title="Model" {...attrs} />;
+      return <ModelIcon title="Модель" {...attrs} />;
     case NODE_TYPE.METRIC:
-      return <MetricIcon title="Metric" {...attrs} />;
+      return <MetricIcon title="Метрики" {...attrs} />;
     case NODE_TYPE.VIEW:
-      return <ViewIcon title="View" {...attrs} />;
+      return <ViewIcon title="Представления" {...attrs} />;
     case NODE_TYPE.RELATION:
-      return <RelationshipIcon title="Relationship" {...attrs} />;
+      return <RelationshipIcon title="Связи" {...attrs} />;
 
     case NODE_TYPE.FIELD:
       return type ? getColumnTypeIcon({ type }, attrs) : null;

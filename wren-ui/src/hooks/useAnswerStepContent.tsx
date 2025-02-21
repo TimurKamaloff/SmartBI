@@ -26,7 +26,7 @@ function getButtonsProps({
   onPreviewData: () => Promise<void>;
 }) {
   const previewDataButtonText = 'Prevew data';
-  const viewSQLButtonText = isLastStep ? 'View full SQL' : 'View SQL';
+  const viewSQLButtonText = isLastStep ? 'SQL' : 'SQL';
   const previewDataButtonProps = isLastStep
     ? { type: 'primary', className: 'mr-2' }
     : getTextButton(isPreviewData);
